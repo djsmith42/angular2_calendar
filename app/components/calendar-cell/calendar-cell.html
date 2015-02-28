@@ -6,9 +6,27 @@
     font-size: 12px;
     padding-top: 6px; /* poor man's vertical centering */
   }
+  .goodresults {
+    color: #090;
+    background: #efffef;
+  }
+
+  .weakresults {
+    color: orange;
+    background: #ffffef;
+  }
+
+  .badresults {
+    color: red;
+    background: #ffefef;
+  }
 </style>
 
-<div>
+<div
+  [class.badresults]="status.searchResults.options == 0"
+  [class.goodresults]="status.searchResults.options > 3"
+  [class.weakresults]="status.searchResults.options > 1 && status.searchResults.options <= 3"
+  >
   <div [hidden]="hideSpinner()" class="searching">
     Searching
   </div>
