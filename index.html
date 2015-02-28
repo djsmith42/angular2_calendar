@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+  <link rel="stylesheet" href="app.css" />
+  <title>Angular2 Example</title>
+  <script src="/deps/traceur.js"></script>
+  <script src="/deps/system.js"></script>
+
+  <script src="/deps/zone.js"></script>
+  <script src="/deps/long-stack-trace-zone.js"></script>
+
+  <script>
+
+    System.config({
+      baseURL: '/',
+      paths: {
+        '*': 'deps/angular2/es5/*.js',
+        'angular2/angular2': 'deps/angular2/es5/angular2/angular2.js',
+        'angular2/*': 'deps/angular2/es5/angular2/*.js',
+        'angular2/di': 'deps/angular2/es5/angular2/di.js',
+        'rtts_assert/*': 'deps/angular2/es5/rtts_assert/*.js',
+        'firebase/AngularFire': 'deps/firebase/AngularFire.js',
+        'app/*': 'app/*',
+        'components/*': 'app/components/*.js',
+        'decorators/*': 'app/decorators/*.js',
+        'services/*': 'app/services/*.js',
+        'stores/*': 'app/stores/*.js'
+      },
+    });
+
+    System.import('app/app.js')
+    .then(function(module) {
+      return module.main();
+    })
+    .catch(console.error.bind(console));
+  </script>
+</head>
+<body>
+
+  <h1>Angular2 Example</h1>
+  <calendar></calendar>
+
+</body>
+</html>

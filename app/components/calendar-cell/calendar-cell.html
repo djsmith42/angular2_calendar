@@ -1,0 +1,22 @@
+<style>
+  .cell:hover {
+  }
+  .searching {
+    color: blue;
+    font-size: 12px;
+    padding-top: 6px; /* poor man's vertical centering */
+  }
+</style>
+
+<div>
+  <div [hidden]="hideSpinner()" class="searching">
+    Searching
+  </div>
+  <div (click)="cellClicked()" [hidden]="hideTime()">
+    {{hour}}:00
+  </div>
+  <div [hidden]="hideSearchResults()">
+    <div>{{status.searchResults.options}}</div>
+    <div>results</div>
+  </div>
+</div>

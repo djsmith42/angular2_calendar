@@ -1,0 +1,74 @@
+<style>
+  table {
+    border-right: 2px solid gray;
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+  .day-header {
+    border: 1px solid gray;
+  }
+
+  .day-header:hover {
+    cursor: pointer;
+  }
+
+  .hour-cell:hover {
+    background-color: #559 !important;
+    color: white;
+  }
+
+  .hour-cell {
+    width: 120px;
+    text-align: center;
+    border-left: 1px solid gray;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    height: 40px;
+    padding: 0;
+  }
+
+  .hour-cell > div {
+    height: 100%;
+  }
+
+  .hour-cell .time {
+    padding-top: 10px; /* poor man's vertical centering */
+  }
+
+  .hour-cell .searching {
+    color: blue;
+    font-size: 12px;
+    padding-top: 12px; /* poor man's vertical centering */
+  }
+
+  .hour-cell .good-results {
+    color: #090;
+    background: #efffef;
+  }
+
+  .hour-cell .weak-results {
+    color: orange;
+    background: #ffffef;
+  }
+
+  .hour-cell .bad-results {
+    color: red;
+    background: #ffefef;
+  }
+</style>
+
+<div class="calendar">
+ <button class="btn" (click)="searchAll()">Search all month</button>
+ <table>
+  <tr>
+    <th template="foreach: #day in days" class="day-header" (click)="dayHeaderClicked(day)">
+     {{day}}
+   </th>
+  </tr>
+  <tr template="foreach: #hour in hours">
+   <td template="foreach: #day in days" class="hour-cell">
+     <calendar-cell [hour]="hour" [day]="day" />
+   </td>
+  </tr>
+ </table>
+</div>
