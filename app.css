@@ -20,15 +20,6 @@ table {
     border: 1px solid gray;
 }
 
-.day-header:hover {
-    cursor: pointer;
-}
-
-.hour-cell:hover > div {
-    background-color: #559 !important;
-    color: white;
-}
-
 .hour-cell {
     width: 120px;
     text-align: center;
@@ -41,29 +32,4 @@ table {
 
 .hour-cell > div {
   height: 100%;
-}
-
-.hour-cell .time {
-  padding-top: 10px; /* poor man's vertical centering */
-}
-
-.hour-cell .searching {
-    color: blue;
-    font-size: 12px;
-    padding-top: 12px; /* poor man's vertical centering */
-}
-
-.hour-cell .good-results {
-  color: #090;
-  background: #efffef;
-}
-
-.hour-cell .weak-results {
-  color: orange;
-  background: #ffffef;
-}
-
-.hour-cell .bad-results {
-  color: red;
-  background: #ffefef;
 }

@@ -1,9 +1,7 @@
 <style>
-  .cell:hover {
-  }
   .searching {
     color: blue;
-    font-size: 12px;
+    font-size: 10px;
     padding-top: 6px; /* poor man's vertical centering */
   }
   .goodresults {
@@ -20,14 +18,20 @@
     color: red;
     background: #ffefef;
   }
+
+  :hover {
+    background-color: #559 !important;
+    color: white;
+  }
 </style>
 
 <div
-  [class.badresults]="status.searchResults.options == 0"
   [class.goodresults]="status.searchResults.options > 3"
-  [class.weakresults]="status.searchResults.options > 1 && status.searchResults.options <= 3"
+  [class.weakresults]="status.searchResults.options >= 1 && status.searchResults.options <= 3"
+  [class.badresults]="status.searchResults.options == 0"
+  [class.searching]="status.isSearching"
   >
-  <div [hidden]="hideSpinner()" class="searching">
+  <div [hidden]="hideSpinner()">
     Searching
   </div>
   <div (click)="cellClicked()" [hidden]="hideTime()">
