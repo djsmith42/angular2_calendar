@@ -7,3 +7,4 @@ To run it:
  - cd angular2_calendar
  - http-server
  - Go to http://localhost:8008 in your browser
+ - Click the "search all month" button.
