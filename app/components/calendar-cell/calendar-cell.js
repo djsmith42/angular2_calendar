@@ -1,4 +1,4 @@
-import {Component, Foreach, Template} from 'angular2/angular2';
+import {Component, Foreach, Template, If} from 'angular2/angular2';
 import {addCell} from 'stores/registry';
 
 var randomMillis = function() {
@@ -15,7 +15,7 @@ var randomMillis = function() {
 @Template({
   url: System.baseURL+'app/components/calendar-cell/calendar-cell.html',
   directives: [
-    Foreach
+    Foreach, If
   ]
 })
 export class CalendarCell {
