@@ -1,4 +1,4 @@
-This is just a dumb little example of an Angular2 app.
+This is just a demo of an Angular2 calendar search app. It's only useful to show how to use Angular2.
 
 To run it:
 
