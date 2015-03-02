@@ -3,23 +3,26 @@
 <head>
   <link rel="stylesheet" href="app.css" />
   <title>Angular2 Example</title>
-  <script src="/deps/traceur.js"></script>
-  <script src="/deps/system.js"></script>
 
-  <script src="/deps/zone.js"></script>
-  <script src="/deps/long-stack-trace-zone.js"></script>
+  <script src="/node_modules/traceur/bin/traceur.js"></script>
+  <script src="/node_modules/es6-module-loader/dist/es6-module-loader-sans-promises.js"></script>
+  <script src="/node_modules/systemjs/dist/system.js"></script>
+  <script src="/node_modules/zone.js/zone.js"></script>
+  <script src="/node_modules/zone.js/long-stack-trace-zone.js"></script>
 
   <script>
+      // atscript without runtime-type assertions.
+      System.traceurOptions = {
+        annotations: true,
+        memberVariables: true,
+        typeAssertions: false,
+        types: true
+      };
 
     System.config({
       baseURL: '/',
       paths: {
-        '*': 'deps/angular2/es5/*.js',
-        'angular2/angular2': 'deps/angular2/es5/angular2/angular2.js',
-        'angular2/*': 'deps/angular2/es5/angular2/*.js',
-        'angular2/di': 'deps/angular2/es5/angular2/di.js',
-        'rtts_assert/*': 'deps/angular2/es5/rtts_assert/*.js',
-        'firebase/AngularFire': 'deps/firebase/AngularFire.js',
+        'angular2/*':'/node_modules/angular2/es6/prod/*.es6',
         'app/*': 'app/*',
         'components/*': 'app/components/*.js',
         'decorators/*': 'app/decorators/*.js',
@@ -30,6 +33,8 @@
 
     System.import('app/app.js')
     .then(function(module) {
+      // uncomment for debugging.
+      // zone = zone.fork(Zone.longStackTraceZone);
       return module.main();
     })
     .catch(console.error.bind(console));
