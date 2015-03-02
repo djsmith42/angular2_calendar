@@ -31,13 +31,13 @@
   [class.badresults]="status.searchResults.options == 0"
   [class.searching]="status.isSearching"
   >
-  <div [hidden]="hideSpinner()">
+  <div *if="showSpinner()">
     Searching
   </div>
-  <div (click)="cellClicked()" [hidden]="hideTime()">
+  <div *if="showTime()" (click)="cellClicked()" class="time">
     {{hour}}:00
   </div>
-  <div [hidden]="hideSearchResults()">
+  <div *if="showSearchResults()">
     <div>{{status.searchResults.options}}</div>
     <div>results</div>
   </div>

@@ -42,14 +42,17 @@ export class CalendarCell {
       }, randomMillis());
     }
   }
+  showSpinner() {
+    return this.status.isSearching;
+  }
   hideSpinner() {
     return !this.status.isSearching;
   }
-  hideTime() {
-    return this.status.isSearching || this.status.searchResults.options !== null;
+  showTime() {
+    return !this.status.isSearching && this.status.searchResults.options === null;
   }
-  hideSearchResults() {
-    return this.status.isSearching || this.status.searchResults.options === null;
+  showSearchResults() {
+    return !this.status.isSearching && this.status.searchResults.options !== null;
   }
 }
 
