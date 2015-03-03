@@ -1,5 +1,6 @@
 import {Component, Foreach, Template, If} from 'angular2/angular2';
 import {addCell} from 'stores/registry';
+import {BindingPropagationConfig} from 'angular2/core';
 
 var randomMillis = function() {
   return Math.floor(Math.random() * 500);
@@ -19,8 +20,12 @@ var randomMillis = function() {
   ]
 })
 export class CalendarCell {
+	bpc;
 
-  constructor() {
+  constructor(bpc:BindingPropagationConfig) {
+    this.isPure = true;
+    this.bpc = bpc;
+    if (this.isPure) this.bpc.shouldBePropagated();
     addCell(this);
     this.status = {
       isSearching: false,
@@ -39,7 +44,8 @@ export class CalendarCell {
       setTimeout(() => {
         self.status.isSearching = false;
         self.status.searchResults.options = Math.floor(Math.random() * 5);
-      }, randomMillis());
+        if (this.isPure) this.bpc.shouldBePropagated();
+      }, 0);
     }
   }
   showSpinner() {
