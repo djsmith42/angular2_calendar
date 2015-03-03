@@ -26,6 +26,7 @@ export class CalendarCell {
     this.isPure = true;
     this.bpc = bpc;
     if (this.isPure) this.bpc.shouldBePropagated();
+
     addCell(this);
     this.status = {
       isSearching: false,

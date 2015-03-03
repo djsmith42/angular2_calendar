@@ -58,8 +58,9 @@
 </style>
 
 <div class="calendar">
- <button class="btn" (click)="searchAll()">Search all month</button>
- <table>
+ <button class="btn" *if="!isLoaded" (click)="load()">Load</button>
+ <button class="btn" *if="isLoaded"  (click)="searchAll()">Search all month</button>
+ <table *if="isLoaded">
   <tr>
     <th template="foreach: #day in days" class="day-header" (click)="dayHeaderClicked(day)">
      {{day}}

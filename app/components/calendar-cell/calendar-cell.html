@@ -35,7 +35,19 @@
     Searching
   </div>
   <div *if="showTime()" (click)="cellClicked()" class="time">
-    {{hour}}:00
+    <div *if="showTime()">
+      <div *if="showTime()">
+        <div *if="showTime()">
+          <div *if="showTime()">
+            <div *if="showTime()">
+              <div *if="showTime()">
+                {{hour}}:00
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <div *if="showSearchResults()">
     <div>{{status.searchResults.options}}</div>
