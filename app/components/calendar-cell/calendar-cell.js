@@ -46,7 +46,7 @@ export class CalendarCell {
         self.status.isSearching = false;
         self.status.searchResults.options = Math.floor(Math.random() * 5);
         if (this.isPure) this.bpc.shouldBePropagated();
-      }, 0);
+      }, randomMillis());
     }
   }
   showSpinner() {

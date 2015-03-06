@@ -9,6 +9,10 @@
     background: #efffef;
   }
 
+  .result-label {
+    font-size: 8px;
+  }
+
   .weakresults {
     color: orange;
     background: #ffffef;
@@ -35,22 +39,10 @@
     Searching
   </div>
   <div *if="showTime()" (click)="cellClicked()" class="time">
-    <div *if="showTime()">
-      <div *if="showTime()">
-        <div *if="showTime()">
-          <div *if="showTime()">
-            <div *if="showTime()">
-              <div *if="showTime()">
-                {{hour}}:00
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    {{hour}}:00
   </div>
   <div *if="showSearchResults()">
     <div>{{status.searchResults.options}}</div>
-    <div>results</div>
+    <div class="result-label">results</div>
   </div>
 </div>
