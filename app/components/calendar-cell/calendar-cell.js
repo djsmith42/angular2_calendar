@@ -3,7 +3,7 @@ import {addCell} from 'stores/registry';
 import {BindingPropagationConfig} from 'angular2/core';
 
 var randomMillis = function() {
-  return Math.floor(Math.random() * 500);
+  return 0; //Math.floor(Math.random() * 500);
 }
 
 @Component({
