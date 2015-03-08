@@ -42,6 +42,8 @@ export class CalendarCell {
     if (!alreadySearching) {
       // Simulate an AJAX request:
       var self = this;
+      self.isSearching = true;
+      if (this.isPure) this.bpc.shouldBePropagated();
       setTimeout(() => {
         self.status.isSearching = false;
         self.status.searchResults.options = Math.floor(Math.random() * 5);

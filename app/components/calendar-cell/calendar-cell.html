@@ -36,7 +36,7 @@
   [class.searching]="status.isSearching"
   >
   <div *if="showSpinner()">
-    Searching
+    ...
   </div>
   <div *if="showTime()" (click)="cellClicked()" class="time">
     {{hour}}:00
