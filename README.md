@@ -6,7 +6,7 @@ To run it:
  - `npm install -g http-server`
  - `cd angular2_calendar`
  - `npm install`
- - `http-server`
+ - `http-server -c-1`
  - Go to http://localhost:8008 in your browser
  - Click the "Load" button.
  - Click the "Search all Month" button.
